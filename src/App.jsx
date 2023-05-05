@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-
-const dataFetch = async () => {
-  const data = await fetch();
-};
+import { useEffect, useState } from 'react';
+import './App.css';
 
 function App() {
   const [quotes, setQuotes] = useState([]);
@@ -15,7 +11,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("https://type.fit/api/quotes")
+    fetch('https://type.fit/api/quotes')
       .then((resp) => resp.json())
       .then((data) => {
         setQuotes(data);
@@ -24,16 +20,16 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       <h1>Quote Generator</h1>
       <div>
-        <button type="button" onClick={getRandomQuotes}>
+        <button type='button' onClick={getRandomQuotes}>
           Get New Quote
         </button>
         {quote && (
-          <div className="quote__container">
-            <p className="quote__text">"{quote.text}"</p>
-            <p className="quote__author">Author: {quote.author}</p>
+          <div className='quote__container'>
+            <p className='quote__text'>"{quote.text}"</p>
+            <p className='quote__author'>Author: {quote.author}</p>
           </div>
         )}
       </div>
